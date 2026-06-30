@@ -425,6 +425,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: heroFadeIn 0.8s ease both;
 }
 
 .hero-card {
@@ -435,6 +436,7 @@ a:hover {
   width: 100%;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(6px);
+  animation: heroCardRise 0.8s ease 0.15s both;
 }
 
 .hero-content {
@@ -465,6 +467,37 @@ a:hover {
   gap: var(--space-md);
   justify-content: center;
   flex-wrap: wrap;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    background-position: center 48%;
+  }
+
+  to {
+    opacity: 1;
+    background-position: center;
+  }
+}
+
+@keyframes heroCardRise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero,
+  .hero-card {
+    animation: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -942,8 +975,14 @@ a:hover {
     justify-content: flex-start;
   }
 
-  .curve-divider {
-    height: 42px;
+  .shape-section::before {
+    top: -49px;
+    height: 50px;
+    background-image: radial-gradient(
+      150% 80px at 50% -20px,
+      transparent 62%,
+      var(--shape-color) 63%
+    );
   }
 }
 
@@ -1153,9 +1192,14 @@ a:hover {
 /* ==============================
    STAFF SECTION
    ============================== */
+.staff .section-title,
+.staff .section-intro {
+  color: var(--color-text-light);
+}
 
 .staff {
-  background-color: var(--color-section-a);
+  background-color: var(--color-navy);
+  color:var(--color-text-light);
 }
 
 @media (max-width: 768px) {
@@ -1186,6 +1230,8 @@ a:hover {
     border-radius: var(--radius-md);
     overflow: hidden;
     text-align: center;
+    color: var(--color-text);
+    box-shadow: 0 10px 24px rgba(42, 82, 138, 0.08);
    }
 
   .staff-img-wrap {
@@ -1275,4 +1321,69 @@ a:hover {
   gap: var(--space-md);
   justify-content: center;
   flex-wrap: wrap;
+}
+
+/* ==============================
+   IMAGE VISUAL EFFECTS
+   ============================== */
+
+.image-reveal {
+  opacity: 0;
+  transform: translateY(24px) scale(0.98);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease,
+    box-shadow 0.3s ease;
+}
+
+.image-reveal--visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Gentle hover effect for normal images */
+.image-reveal:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(42, 82, 138, 0.16);
+}
+
+/* Helps image zoom look cleaner inside existing image boxes */
+.room-img-wrap,
+.card-img-placeholder,
+.outdoor-play-item,
+.staff-img-wrap {
+  overflow: hidden;
+}
+
+/* Slight zoom inside room/card/outdoor images */
+.room-img,
+.card-img,
+.outdoor-play-img,
+.staff-img {
+  transition: transform 0.5s ease;
+}
+
+.room-img-wrap:hover .room-img,
+.card-img-placeholder:hover .card-img,
+.outdoor-play-item:hover .outdoor-play-img,
+.staff-img-wrap:hover .staff-img {
+  transform: scale(1.08);
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .image-reveal,
+  .room-img,
+  .card-img,
+  .outdoor-play-img,
+  .staff-img {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .image-reveal:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }
