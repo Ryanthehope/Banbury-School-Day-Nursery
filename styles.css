@@ -527,30 +527,23 @@ a:hover {
   background-size: 100% 100%;
   pointer-events: none;
   z-index: 1;
-}
-
-.shape-section--navy::before {
   background-image: radial-gradient(
     150% 130px at 50% -25px,
     transparent 62%,
-    var(--color-navy) 63%
+    var(--shape-color) 63%
   );
 }
 
-.shape-section--light::before {
-  background-image: radial-gradient(
-    150% 130px at 50% -25px,
-    transparent 62%,
-    var(--color-section-a) 63%
-  );
+.shape-section--navy {
+  --shape-color: var(--color-navy);
 }
 
-.shape-section--blue::before {
-  background-image: radial-gradient(
-    150% 130px at 50% -25px,
-    transparent 62%,
-    var(--color-section-b) 63%
-  );
+.shape-section--light {
+  --shape-color: var(--color-section-a);
+}
+
+.shape-section--blue {
+  --shape-color: var(--color-section-b);
 }
 
 /* ==============================
