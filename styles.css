@@ -1113,7 +1113,6 @@ a:hover {
 /* ==============================
    ROOM SECTIONS
    ============================== */
-
 .room-section {
   background-color: var(--color-section-a);
 }
@@ -1138,18 +1137,16 @@ a:hover {
   direction: ltr;
 }
 
-.room-img-wrap {
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  background-color: var(--color-section-b);
+.room-text h2 {
+  margin-bottom: var(--space-sm);
 }
 
-.room-img {
-  width: 100%;
-  height: 280px;
-  object-fit: contain;
-  object-position: center;
-  padding: var(--space-sm);
+.room-text p {
+  margin-bottom: var(--space-sm);
+}
+
+.room-text--full {
+  max-width: 680px;
 }
 
 .room-label {
@@ -1163,30 +1160,154 @@ a:hover {
   margin-bottom: var(--space-sm);
 }
 
-.room-text h2 {
-  margin-bottom: var(--space-sm);
-}
-
-.room-text p {
-  margin-bottom: var(--space-sm);
-}
-
-.room-text--full {
-  max-width: 680px;
-}
-
-
-
-.outdoor-play {
+/* Gallery card */
+.room-media {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-md);
-  margin-top: var(--space-md);
 }
 
-.outdoor-play-item {
-  border-radius: var(--radius-md);
-  overflow: hidden;
+.room-gallery-card {
+  position: relative;
+  background-color: var(--color-section-b);
+  border-radius: 28px;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  box-shadow: 0 18px 36px rgba(42, 82, 138, 0.12);
+}
+
+.room-section--alt .room-gallery-card {
+  background-color: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
+}
+
+.room-icon-badge {
+  position: absolute;
+  top: -34px;
+  left: 24px;
+  width: 92px;
+  height: 92px;
+  display: grid;
+  place-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+  z-index: 2;
+}
+
+.room-icon {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.room-photo-grid {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.room-photo-grid--two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.room-photo {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+  filter: brightness(1.04) contrast(1.04) saturate(1.06);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.room-photo:hover {
+  transform: scale(1.025);
+  filter: brightness(1.07) contrast(1.07) saturate(1.08);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .room-grid,
+  .room-grid--reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  .room-photo-grid--two {
+    grid-template-columns: 1fr;
+  }
+
+  .room-photo {
+    height: 220px;
+  }
+
+  .room-icon-badge {
+    width: 76px;
+    height: 76px;
+    top: -28px;
+    left: 18px;
+  }
+
+  .room-icon {
+    width: 54px;
+    height: 54px;
+  }
+
+  .room-gallery-card {
+    padding-top: 2rem;
+  }
+}
+
+/* ==============================
+   OUTDOOR PLAY
+   ============================== */
+
+.outdoor-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.outdoor-gallery-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+  background-color: rgba(255, 255, 255, 0.94);
+  border-radius: 28px;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
+}
+
+.outdoor-play-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+  filter: brightness(1.04) contrast(1.04) saturate(1.06);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.outdoor-play-img:hover {
+  transform: scale(1.025);
+  filter: brightness(1.07) contrast(1.07) saturate(1.08);
+}
+
+@media (max-width: 768px) {
+  .outdoor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .outdoor-gallery-card {
+    grid-template-columns: 1fr;
+  }
+
+  .outdoor-play-img {
+    height: 240px;
+  }
 }
 
 /* ==============================
@@ -1202,17 +1323,6 @@ a:hover {
   color:var(--color-text-light);
 }
 
-@media (max-width: 768px) {
-  .room-grid,
-  .room-grid--reverse {
-    grid-template-columns: 1fr;
-    direction: ltr;
-  }
-
-  .room-img {
-    height: 220px;
-  }
-}
 
 /* ==============================
    STAFF GRID
@@ -1273,13 +1383,6 @@ a:hover {
     opacity: 0.80;
     max-width: none;
    }
-
-  .outdoor-play-img {
-   width: 100%;
-   height: 240px;
-   object-fit: cover;
-   display: block;
-  }
 
 /* ==============================
    404 PAGE
