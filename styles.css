@@ -1226,6 +1226,14 @@ a:hover {
     direction: ltr;
   }
 
+  .room-text {
+    order: 1;
+  }
+
+  .room-media {
+    order: 2;
+  }
+
   .room-photo-grid--two {
     grid-template-columns: 1fr;
   }
@@ -1294,7 +1302,11 @@ a:hover {
     grid-template-columns: 1fr;
   }
 
+   .outdoor-grid .room-text {
+    order: 1;
+  }
   .outdoor-gallery-card {
+    order: 2;
     grid-template-columns: 1fr;
   }
 
