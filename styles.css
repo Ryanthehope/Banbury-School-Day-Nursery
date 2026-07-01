@@ -561,6 +561,16 @@ a:hover {
   margin-top: -1px;
 }
 
+.trust-strip-grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.trust-strip-copy {
+  display: grid;
+  gap: var(--space-md);
+}
+
 .trust-strip-list {
   list-style: none;
   display: flex;
@@ -577,6 +587,30 @@ a:hover {
   font-size: 0.95rem;
   font-weight: 700;
   text-align: center;
+}
+
+.trust-strip-awards {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 24px;
+  padding: var(--space-md);
+}
+
+.trust-awards-list {
+  margin-bottom: var(--space-md);
+}
+
+.trust-strip-awards .award-text {
+  color: var(--color-text-light);
+}
+
+.trust-strip-awards .award-icon {
+  color: var(--color-gold);
+}
+
+.trust-awards-image {
+  width: min(100%, 680px);
+  margin-top: 0;
 }
 
 .why-choose {
@@ -795,6 +829,22 @@ a:hover {
   max-width: none;
 }
 
+.daily-activities {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.daily-activities-img {
+  flex: 1 1 calc(25% - var(--space-sm));
+  min-width: 180px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 24px rgba(42, 82, 138, 0.12);
+}
+
 .learning-preview {
   background-color: var(--color-navy);
   color: var(--color-text-light);
@@ -958,6 +1008,16 @@ a:hover {
   .learning-preview-grid,
   .transition-grid {
     display: grid;
+  }
+
+  .daily-activities-img {
+    flex-basis: calc(50% - var(--space-sm));
+    min-width: 0;
+    height: 180px;
+  }
+
+  .trust-awards-list {
+    justify-content: flex-start;
   }
 
   .visit-cta-card {
@@ -1494,4 +1554,23 @@ a:hover {
     transform: none;
     box-shadow: none;
   }
+}
+
+/* ==============================
+   Contact
+   ============================== */
+
+   .map-card {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.map-card iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
