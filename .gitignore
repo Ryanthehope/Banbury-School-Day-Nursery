@@ -1,5 +1,6 @@
 *.docx
 *.doc
 *.pdf
+!policies/banbury/privacy-governance-and-digital/screen-use-policy.pdf
 Thumbs.db
 .DS_Store
