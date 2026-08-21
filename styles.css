@@ -1891,54 +1891,12 @@ a:hover {
    OUTDOOR PLAY
    ============================== */
 
-.outdoor-grid {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: var(--space-lg);
-  align-items: center;
-}
-
-.outdoor-gallery-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-sm);
-  background-color: rgba(255, 255, 255, 0.94);
-  border-radius: 28px;
-  padding: clamp(1rem, 2vw, 1.5rem);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
-}
-
-.outdoor-play-img {
-  width: 100%;
+.outdoor-room-gallery .room-photo {
   height: 320px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 20px;
-  display: block;
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
-  filter: brightness(1.04) contrast(1.04) saturate(1.06);
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.outdoor-play-img:hover {
-  transform: scale(1.025);
-  filter: brightness(1.07) contrast(1.07) saturate(1.08);
 }
 
 @media (max-width: 768px) {
-  .outdoor-grid {
-    grid-template-columns: 1fr;
-  }
-
-   .outdoor-grid .room-text {
-    order: 1;
-  }
-  .outdoor-gallery-card {
-    order: 2;
-    grid-template-columns: 1fr;
-  }
-
-  .outdoor-play-img {
+  .outdoor-room-gallery .room-photo {
     height: 240px;
   }
 }
