@@ -1689,25 +1689,25 @@ a:hover {
 
 .room-grid--room-gallery {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto auto auto;
   align-items: center;
+}
+
+.room-grid--room-gallery .room-text {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  max-width: 70ch;
+  justify-self: center;
 }
 
 .room-grid--room-gallery .room-photo-column--top {
   grid-column: 1;
-  grid-row: 1;
-}
-
-.room-grid--room-gallery .room-text {
-  grid-column: 1;
   grid-row: 2;
-  max-width: 38ch;
-  justify-self: center;
 }
 
 .room-grid--room-gallery .room-photo-column--right {
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 3;
 }
 
 .room-photo-column {
@@ -1716,7 +1716,7 @@ a:hover {
 
 .room-grid--room-gallery .room-photo-column--bottom {
   grid-column: 1;
-  grid-row: 3;
+  grid-row: 4;
 }
 
 .room-grid--room-gallery .room-photo-column--top .room-gallery-card {
@@ -1835,13 +1835,13 @@ a:hover {
 
   .room-grid--room-gallery .room-text {
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 1;
     max-width: none;
   }
 
   .room-grid--room-gallery .room-photo-column--top {
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 2;
   }
 
   .room-grid--room-gallery .room-photo-column--right {
