@@ -625,6 +625,71 @@ a:hover {
   margin-top: 0;
 }
 
+.ofsted-highlight {
+  background-color: #fff4d6;
+  border-top: 6px solid var(--color-gold);
+}
+
+.ofsted-highlight-layout {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.ofsted-rating {
+  width: 150px;
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  gap: 0.15rem;
+  padding: var(--space-md);
+  border-radius: 50%;
+  background-color: var(--color-navy);
+  color: var(--color-text-light);
+  text-align: center;
+  box-shadow: 0 12px 26px rgba(42, 82, 138, 0.2);
+}
+
+.ofsted-rating-label,
+.ofsted-rating > span:last-child {
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+.ofsted-rating strong {
+  color: var(--color-gold);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.ofsted-highlight-copy h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.ofsted-highlight-copy p {
+  max-width: 52ch;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .ofsted-highlight-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  .ofsted-rating,
+  .ofsted-highlight-layout .btn {
+    justify-self: center;
+  }
+
+  .ofsted-highlight-copy p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .why-choose {
   background-color: var(--color-section-a);
 }
