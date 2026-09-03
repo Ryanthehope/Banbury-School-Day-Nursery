@@ -1162,6 +1162,7 @@ a:hover {
 .content-stack {
   display: grid;
   gap: var(--space-md);
+  min-width: 0;
 }
 
 .content-card {
@@ -1170,6 +1171,7 @@ a:hover {
   border-radius: var(--radius-md);
   padding: var(--space-md);
   box-shadow: 0 10px 24px rgba(42, 82, 138, 0.08);
+  min-width: 0;
 }
 
 .content-card--tint {
@@ -1291,8 +1293,10 @@ a:hover {
 }
 
 .table-wrap {
+  max-width: 100%;
   overflow-x: auto;
   margin-top: var(--space-md);
+  -webkit-overflow-scrolling: touch;
 }
 
 .fee-table {
@@ -1462,6 +1466,7 @@ a:hover {
 
 .content-split-image {
   width: 100%;
+  height: auto;
   max-width: 320px;
   border-radius: var(--radius-md);
   justify-self: end;
