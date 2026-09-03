@@ -13,8 +13,6 @@ const revealImages = document.querySelectorAll('img');
 revealImages.forEach((img) => {
   img.classList.add('image-reveal');
 
-  // Helps performance
-  img.setAttribute('loading', 'lazy');
   img.setAttribute('decoding', 'async');
 });
 
