@@ -1693,6 +1693,21 @@ a:hover {
     grid-template-columns: 1fr;
   }
 
+  .fee-table {
+    min-width: 0;
+    table-layout: fixed;
+  }
+
+  .fee-table th:first-child {
+    width: 42%;
+  }
+
+  .fee-table th,
+  .fee-table td {
+    padding: 0.65rem 0.35rem;
+    overflow-wrap: anywhere;
+  }
+
   .form-field--wide {
     grid-column: auto;
   }
